@@ -7,7 +7,9 @@ printf("Hola desde un hilo\n");
 
 int main(){
     pthread_t t;
-    for(int i=0;i>=100;i++){
+    
+    
+    for(int i=0 ; i>=100;i++){
     pthread_create(&t,NULL,holahilo,NULL);
     
     }
