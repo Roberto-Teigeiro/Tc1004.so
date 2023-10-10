@@ -11,6 +11,7 @@ int main(){
     pthread_create(&t,NULL,holahilo,NULL);
     
     }
+    
     pthread_exit(NULL);
     return 0;
 }
