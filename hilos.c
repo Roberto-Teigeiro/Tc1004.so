@@ -3,8 +3,8 @@
 
 int saldo;
 
-void * holaHilo(){
-    printf("hola desde un hilo\n");
+void * holaHilo(void *thid){
+    printf("hola desde un hilo%d\n",*((int *)thid));
     pthread_exit(NULL);
 }
 
@@ -18,11 +18,8 @@ int main(){
 
     pthread_t t;
     saldo = 0;
-
-    for(int i=0; i >=100; i++){
-
-        pthread_create(&t,NULL,incrementoSaldo,NULL);
-    }
+    int thid =1;
+    pthread_create(newthread: &t,NULL,holaHilo, &thid);
 
     pthread_exit(NULL);
 }
